@@ -1,16 +1,19 @@
 import React from 'react';
 import Navbar from '../Components/Navbar';
+import { Outlet } from 'react-router';
+import Footer from '../Components/Footer';
 
 const Root = () => {
     return (
-        <div className='container mx-auto'>
+
+        <div>
+            <div className='container mx-auto '>
                 <Navbar></Navbar>
-            <main>
-
-            </main>
-            <footer>
-
-            </footer> 
+                <main>
+                    <Outlet></Outlet>
+                </main>
+            </div>
+            <Footer></Footer>
         </div>
     );
 };
