@@ -1,10 +1,11 @@
 import React from 'react';
+import { Link } from 'react-router';
 
 const ErrorPage = () => {
     return (
-        <div>
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3hacQhyoMCbUgUZo95gl55Yaq9Hk7s2E3Y5FarZ5HsxqFaTrwO2QJYCY&s=10" alt="" />
-            <button className='btn '>Go To Home</button>
+        <div className='w-11/12 mx-auto text-center space-y-4'>
+            <img className='w-full' src="https://syhzhuelbxgnhopnwjgc.supabase.co/storage/v1/object/public/media/blog/404_page_cover.jpg" alt="" />
+            <Link className='btn ' to={'/'}>Go To Home</Link>
         </div>
     );
 };

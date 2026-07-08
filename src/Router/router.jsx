@@ -1,21 +1,19 @@
-import React from 'react';
-import { createBrowserRouter } from 'react-router';
-import ErrorPage from '../Components/ErrorPage';
-import Root from '../Components/Root';
+import { createBrowserRouter } from "react-router";
+import Root from "../Layouts/Root";
+import Home from "../Components/Home";
+import ErrorPage from "../Components/ErrorPage";
 
-const router = createBrowserRouter([
+ const router = createBrowserRouter([
+  {
+    path: "/",
+    errorElement:<ErrorPage></ErrorPage>,
+   Component:Root,
+   children:[
     {
-        path: "/",
-        errorElement: <ErrorPage></ErrorPage>,
-        Component: Root,
-        children:[
-            {
-                index:true,
-                
-            }
-        ]
-    },
-
-]);
-
-export default router;
+      index:true,
+      Component:Home
+    }
+   ]
+  },
+ ])
+ export default router
