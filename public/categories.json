@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "name": "Education",
+    "image":"https://i.ibb.co.com/RX4c29V/book.png",
+    "Description":"Discover educational apps that help you learn new skills, prepare for exams, and expand your knowledge."
+  },
+  {
+    "id": 2,
+    "name": "Productivity",
+      "image":"https://i.ibb.co.com/HpND1gXy/iphone.jpg",
+    "Description":"Boost your productivity with apps for task management, note-taking, calendars, and team collaboration."
+  },
+  {
+    "id": 3,
+    "name": "Health",
+    "image":"https://i.ibb.co.com/Mk4GLZNW/health.png",
+    "Description":"Stay healthy with fitness trackers, workout guides, meditation, and nutrition apps Connect with friends."
+  },
+  {
+    "id": 4,
+    "name": "Games",
+    "image":"https://i.ibb.co.com/fdks2ncb/games.png",
+    "Description":"Enjoy exciting action, adventure, puzzle, and multiplayer games for endless entertainment."
+  },
+  {
+    "id": 5,
+    "name": "Finance",
+    "image":"https://i.ibb.co.com/fJTj5Dd/wallet2.png",
+    "Description":"Manage your budget, track expenses, invest wisely, and control your finances with ease."
+  },
+  {
+    "id": 6,
+    "name": "Social",
+    "image":"https://i.ibb.co.com/xqjmfcYP/users.jpg",
+    "Description":"Connect with friends, share moments, chat instantly, and grow your community."
+  }
+]

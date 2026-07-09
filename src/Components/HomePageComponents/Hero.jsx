@@ -2,7 +2,7 @@ import React from 'react';
 import heroAps from '../../assets/more apps.png'
 const Hero = () => {
     return (
-        <div className="hero my-8">
+        <div className="hero my-8 bg-gray-100">
             <div className="hero-content flex-col lg:flex-row-reverse">
                 <img
                     src={heroAps}
@@ -13,7 +13,7 @@ const Hero = () => {
                     <p className="py-6 text-gray-400">
                         Explore top-rated apps across multiple categories. Find the perfect app for work, learning, health, and entertainment—all in one place.
                     </p>
-                    <button className="btn btn-primary text-black">Explore Apps</button>
+                    <button className="btn btn-primary">Explore Apps</button>
                 </div>
             </div>
         </div>

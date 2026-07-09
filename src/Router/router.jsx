@@ -4,21 +4,22 @@ import Home from "../Components/Home";
 import ErrorPage from "../Components/ErrorPage";
 import Apps from "../Pages/Apps";
 
- const router = createBrowserRouter([
+const router = createBrowserRouter([
   {
     path: "/",
-    errorElement:<ErrorPage></ErrorPage>,
-   Component:Root,
-   children:[
-    {
-      index:true,
-      Component:Home
-    },
-    {
-      path:"/apps",
-      Component:Apps
-    }
-   ]
+    errorElement: <ErrorPage></ErrorPage>,
+    Component: Root,
+    children: [
+      {
+        index: true,
+        Component: Home
+      },
+      {
+        path: "/apps",
+        Component: Apps,
+          loader: () => fetch("AppStore.json"),
+      }
+    ]
   },
- ])
- export default router
+])
+export default router
