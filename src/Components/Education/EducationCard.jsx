@@ -2,15 +2,10 @@ import React from 'react';
 import { IoIosStarHalf, IoMdStar } from 'react-icons/io';
 import { MdOutlineFileDownload } from 'react-icons/md';
 
-const TrendingAppsCard = ({ data }) => {
-    const { thumbnail, name, rating, downloads, category } = data;
-    // console.log(category);
+const EducationCard = ({Education}) => {
+      const { thumbnail, name, rating, downloads, category } = Education;
     return (
-    
-        <div className="card bg-gray-200 shadow-lg hover:-translate-y-4
-hover:shadow-xl
-transition-all
-duration-200">
+       <div className="card bg-blue-100 shadow-lg">
             <figure>
                 <img className='w-full h-[200px] object-cover'
                     src={thumbnail}
@@ -30,14 +25,9 @@ duration-200">
                 <div className='flex gap-2'>
                     <MdOutlineFileDownload size={24} /> <h2 >{downloads} M Downloads</h2>
                 </div>
-
-                <div className="card-actions justify-end">
-                    <div className=" badge border-blue-500">{category} </div>
-                    <div className=" badge border-amber-500">View Details </div>
-                </div>
             </div>
         </div>
     );
 };
 
-export default TrendingAppsCard;
+export default EducationCard;

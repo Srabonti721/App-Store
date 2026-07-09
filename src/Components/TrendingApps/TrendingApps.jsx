@@ -2,8 +2,11 @@ import React from 'react';
 import TrendingAppsCard from './TrendingAppsCard';
 
 const TrendingApps = ({ apps }) => {
-    const filterData = apps.filter(user => user.rating == 4.8);
-    // console.log(filterData);
+    const trendingApps = apps  
+.sort((a, b) => b.rating - a.rating)
+  .slice(0, 4);
+//   console.log(trendingApps);
+  
     return (
         <div>
             <div className='my-4'>
@@ -12,7 +15,7 @@ const TrendingApps = ({ apps }) => {
             </div>
                    <div className='my-8 grid grid-cols-4 gap-4'>
                     {
-                        filterData.map(data => <TrendingAppsCard key={data.id} data={data}></TrendingAppsCard>)
+                        trendingApps.map(data => <TrendingAppsCard key={data.id} data={data}></TrendingAppsCard>)
                     }
                 </div>
 

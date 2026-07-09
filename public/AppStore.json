@@ -53,7 +53,7 @@
   "banner": "https://i.ibb.co.com/HfT3JXqM/nation-banner.jpg",
   "downloads": 5.5,
   "category": "Productivity",
-  "rating": 4.8,
+  "rating": 4.1,
   "description": "Notion helps you organize notes, tasks, documents, and team collaboration in one place.",
   "features": [
     "Task management",
@@ -122,7 +122,7 @@
   "banner": "https://i.ibb.co.com/jZ9dzxKp/myfitness.jpg",
   "downloads": 7.5,
   "category": "Health",
-  "rating": 4.8,
+  "rating": 3.8,
   "description": "Track calories, nutrition, and exercise to achieve your fitness goals.",
   "features": [
     "Calorie counter",
@@ -145,7 +145,7 @@
   "banner": "https://i.ibb.co.com/QvLFkd0v/subway.jpg",
   "downloads": 8.5,
   "category": "Games",
-  "rating": 4.8,
+  "rating": 4.5,
   "description": "Run through endless tracks, dodge trains, and collect coins in this exciting endless runner game.",
   "features": [
     "Endless gameplay",
@@ -180,6 +180,75 @@
       "user": "social_star",
       "rating": 4,
       "comment": "Great app for staying connected with friends."
+    }
+  ]
+},
+{
+  "id": "app009",
+  "name": "Spotify",
+  "developer": "Spotify AB",
+  "thumbnail": "https://i.ibb.co/7Vn5M0Y/todoist.jpg",
+  "banner": "https://i.ibb.co/J7ZVnPz/todoist-banner.jpg",
+  "downloads": 2.8,
+  "category": "Productivity",
+  "rating": 4.4,
+  "description": "Todoist helps you organize tasks, set priorities, and manage projects efficiently.",
+  "features": [
+    "Task management",
+    "Recurring reminders",
+    "Project collaboration"
+  ],
+  "reviews": [
+    {
+      "user": "task_master",
+      "rating": 5,
+      "comment": "Keeps my daily work perfectly organized."
+    }
+  ]
+},
+{
+  "id": "app010",
+  "name": "MyFitnessPal",
+  "developer": "MyFitnessPal Inc.",
+  "thumbnail": "https://i.ibb.co/YR4n2mJ/myfitnesspal.jpg",
+  "banner": "https://i.ibb.co/j4dXJ1S/myfitnesspal-banner.jpg",
+  "downloads": 3.6,
+  "category": "Health",
+  "rating": 4.0,
+  "description": "Track calories, monitor nutrition, and achieve your health and fitness goals.",
+  "features": [
+    "Calorie tracker",
+    "Nutrition insights",
+    "Exercise logging"
+  ],
+  "reviews": [
+    {
+      "user": "healthy_life",
+      "rating": 5,
+      "comment": "The best app for maintaining a healthy lifestyle."
+    }
+  ]
+},
+{
+  "id": "app011",
+  "name": "Khan Academy",
+  "developer": "Khan Academy",
+  "thumbnail": "https://i.ibb.co/8DgM1nL/khan-academy.jpg",
+  "banner": "https://i.ibb.co/Y0Xq4Q0/khan-academy-banner.jpg",
+  "downloads": 2.1,
+  "category": "Education",
+  "rating": 4.1,
+  "description": "Learn math, science, programming, and more with free video lessons and practice exercises.",
+  "features": [
+    "Free online courses",
+    "Practice exercises",
+    "Progress tracking"
+  ],
+  "reviews": [
+    {
+      "user": "student123",
+      "rating": 5,
+      "comment": "Amazing platform for learning anything for free."
     }
   ]
 }
