@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { use } from 'react';
 import { NavLink } from 'react-router';
 import iPhone from "../assets/iphone 17 pro.jpeg"
+import { AuthContext } from '../Context/AuthProvider';
 
 const Navbar = () => {
+  const userInfo= use(AuthContext);
+  console.log(userInfo);
+  
   const links = <>
     <NavLink className='mr-10' to='/'>Home</NavLink>
     <NavLink className='mr-10' to={'/apps'}>Apps</NavLink>
