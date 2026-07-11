@@ -8,10 +8,8 @@ const Reviews = ({ review }) => {
     e.preventDefault();
     const review = e.target.review.value;
     console.log(review);
-    
 
  }
-
     return (
         <form onSubmit={handleReview}>
             <div className='bg-purple-50 shadow-lg rounded-2xl p-8 my-5'>

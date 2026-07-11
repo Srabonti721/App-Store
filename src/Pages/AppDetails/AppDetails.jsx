@@ -4,10 +4,11 @@ import { MdOutlineFileDownload } from 'react-icons/md';
 import { useLoaderData, useParams } from 'react-router';
 import Reviews from './Reviews';
 import { GrInstallOption } from 'react-icons/gr';
+import { RiUninstallLine } from 'react-icons/ri';
 // import DetailsCard from './DetailsCard';
 
 const AppDetails = () => {
-    const [userDetails, setUserDetails] = useState([])
+    const [install, setInstall] = useState(false)
     const { id } = useParams();
     const appsData = useLoaderData();
     const app = appsData.find(app => app.id === id);
@@ -56,7 +57,8 @@ const AppDetails = () => {
                     }
                     </div>
                     <div>
-                        <button className='btn btn-primary px-10 text-xl'> <GrInstallOption /> install</button>
+                        
+                        <button onClick={()=>setInstall(!install)} className='btn btn-primary px-10 text-xl'>{install? <p className='flex items-center gap-2'><RiUninstallLine /> UnInstall</p>:<p className='flex items-center gap-2'> <GrInstallOption /> Install</p> } </button>
                     </div>
                     <div>
                         {
