@@ -1,13 +1,15 @@
 import React from 'react';
 import { IoIosStarHalf, IoMdStar } from 'react-icons/io';
 import { MdOutlineFileDownload } from 'react-icons/md';
+import { Link } from 'react-router';
 
 const EducationCard = ({Education}) => {
-      const { thumbnail, name, rating, downloads, category } = Education;
+      const { id,thumbnail, name, rating, downloads, category } = Education;
     return (
+        <><Link to={`/appsDetails/${id}`}>
        <div className="card bg-blue-100 shadow-lg">
             <figure>
-                <img className='w-full h-[200px] object-cover'
+                <img className='w-full h-48 object-cover'
                     src={thumbnail}
                     alt="thumbnail" />
             </figure>
@@ -23,10 +25,15 @@ const EducationCard = ({Education}) => {
                     <p className='text-blue-400 text-xl'>{rating}</p>
                 </div>
                 <div className='flex gap-2'>
-                    <MdOutlineFileDownload size={24} /> <h2 >{downloads} M Downloads</h2>
+                    <button className='btn border-red-400'>
+<MdOutlineFileDownload size={24} />{downloads} M Downloads
+                    </button>
+                    
                 </div>
             </div>
         </div>
+        </Link></>
+
     );
 };
 

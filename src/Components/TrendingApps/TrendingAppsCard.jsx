@@ -3,14 +3,11 @@ import { IoIosStarHalf, IoMdStar } from 'react-icons/io';
 import { MdOutlineFileDownload } from 'react-icons/md';
 
 const TrendingAppsCard = ({ data }) => {
-    const { thumbnail, name, rating, downloads, category } = data;
-    // console.log(category);
+    const { thumbnail, name, rating, downloads, category, } = data;
+    // console.log(id);
     return (
-    
-        <div className="card bg-gray-200 shadow-lg hover:-translate-y-4
-hover:shadow-xl
-transition-all
-duration-200">
+ 
+        <div  className="card bg-gray-200 shadow-lg hover:-translate-y-4 hover:shadow-xl transition-all duration-200">
             <figure>
                 <img className='w-full h-[200px] object-cover'
                     src={thumbnail}
@@ -37,6 +34,7 @@ duration-200">
                 </div>
             </div>
         </div>
+
     );
 };
 

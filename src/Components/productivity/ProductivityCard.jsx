@@ -1,15 +1,18 @@
 import React from 'react';
 import { IoIosStarHalf, IoMdStar } from 'react-icons/io';
 import { MdOutlineFileDownload } from 'react-icons/md';
+import { Link } from 'react-router';
 
 const ProductivityCard = ({Productivity}) => {
-      const { thumbnail, name, rating, downloads, category } = Productivity;
-    // console.log(data);
+      const {id, thumbnail, name, rating, downloads, category } = Productivity;
+    console.log(id);
     
     return (
+        <>
+    <Link to={`/appsDetails/${id}`}>
        <div className="card bg-blue-100 shadow-lg">
             <figure>
-                <img className='w-full h-[200px] object-cover'
+                <img className='w-full h-48 object-cover'
                     src={thumbnail}
                     alt="thumbnail" />
             </figure>
@@ -29,6 +32,8 @@ const ProductivityCard = ({Productivity}) => {
                 </div>
             </div>
         </div>
+        </Link>
+            </>
     );
 };
 
