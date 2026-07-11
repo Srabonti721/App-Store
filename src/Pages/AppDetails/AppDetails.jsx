@@ -3,6 +3,7 @@ import { IoIosStarHalf, IoMdStar } from 'react-icons/io';
 import { MdOutlineFileDownload } from 'react-icons/md';
 import { useLoaderData, useParams } from 'react-router';
 import Reviews from './Reviews';
+import { GrInstallOption } from 'react-icons/gr';
 // import DetailsCard from './DetailsCard';
 
 const AppDetails = () => {
@@ -23,7 +24,7 @@ const AppDetails = () => {
             </figure>
             <div className='px-10 my-8'>
                 <div className=" flex items-center gap-4">
-                    <img className='w-14 border rounded-full' src={thumbnail} />
+                    <img className='w-14 h-14 border rounded-full' src={thumbnail} />
                     <div>
                         <div className='flex items-center gap-4'>
                             <h2 className='text-2xl font-semibold'>{name}</h2>
@@ -53,6 +54,9 @@ const AppDetails = () => {
                         features.map((feature, index )=><p 
                         className='border-amber-400 border p-2 rounded-2xl bg-amber-50 text-sm' key={index}> {feature}</p>)
                     }
+                    </div>
+                    <div>
+                        <button className='btn btn-primary px-10 text-xl'> <GrInstallOption /> install</button>
                     </div>
                     <div>
                         {
