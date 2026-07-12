@@ -14,7 +14,6 @@ const AppDetails = () => {
     const appsData = useLoaderData();
     const app = appsData.find(app => app.id === id);
     const {reviews,features, banner, name, thumbnail, description, rating, category, developer, downloads } = app
-    // console.log(app);
 
     return (
         <div className="card bg-gray-100 shadow-sm my-4">

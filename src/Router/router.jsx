@@ -8,6 +8,7 @@ import Authentication from "../Authentication/Authentication";
 import Register from "../Authentication/forms/Register";
 import Login from "../Authentication/forms/Login";
 import PrivateRoute from "../Context/PrivateRoute";
+import Loading from "../Context/Loading";
 
 const router = createBrowserRouter([
   {
@@ -23,6 +24,7 @@ const router = createBrowserRouter([
         path: "/apps",
         Component: Apps,
         loader: () => fetch("AppStore.json"),
+        hydrateFallbackElement:<Loading></Loading>
       },
         {
     path: '/appsDetails/:id',
@@ -30,6 +32,7 @@ const router = createBrowserRouter([
       <AppDetails></AppDetails>
     </PrivateRoute>,
     loader: () => fetch("/AppStore.json"),
+    hydrateFallbackElement:<Loading></Loading>
   }
     ]
   },

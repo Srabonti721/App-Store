@@ -1,9 +1,14 @@
 import React, { use } from 'react';
 import { AuthContext } from '../../Context/AuthProvider';
-import { Link } from 'react-router';
+import { Link, useLocation, useNavigate } from 'react-router';
 
 const Login = () => {
-  const { googleSignIn, loginUser } = use(AuthContext)
+  const { googleSignIn, loginUser } = use(AuthContext);
+  const location = useLocation();
+   const navigate = useNavigate();
+  console.log(location);
+ 
+
   const handleLogin = e => {
     e.preventDefault();
     const email = e.target.email.value;
@@ -11,7 +16,9 @@ const Login = () => {
     console.log(email, password);
     loginUser(email, password)
       .then(result => {
-        console.log(result);
+        const loginUserData = result.user
+        console.log(loginUserData);
+        navigate(`${location.state ? location.state : "/"}`)
       })
       .caught(error => {
         console.log(error);
@@ -36,7 +43,7 @@ const Login = () => {
           <label className="label">Password</label>
           <input name='password' type="password" className="input" placeholder="Password" required />
           <div><a className="link link-hover">Forgot password?</a></div>
-          <Link className="btn btn-neutral mt-4">Login</Link>
+          <button className="btn btn-neutral mt-4">Login</button>
         </form>
         <p className='text-sm'>Don't have an account? <Link className='text-blue-800 underline' to='/authLayout/register'> Register</Link></p>
         ------------------------ or -----------------------

@@ -1,17 +1,36 @@
-import React, { use } from 'react';
-import { Link } from 'react-router';
+import React, { use, useState } from 'react';
+import { Link, useNavigate } from 'react-router';
 import { AuthContext } from '../../Context/AuthProvider';
 import { toast } from 'react-toastify';
 
 const Register = () => {
-    const { googleSignIn, CreateUSer,  } = use(AuthContext);
+    const { googleSignIn, CreateUSer, UpdateUserProfile, setUser } = use(AuthContext);
+    const [errorMessage, setErrorMessage] = useState('');
+    const navigate = useNavigate();
     const handleRegister = e => {
         e.preventDefault();
         const name = e.target.name.value;
         const photo = e.target.photo.value;
         const email = e.target.email.value;
         const password = e.target.password.value;
-        console.log(name, photo, email, password);
+        
+        // console.log(name, photo, email, password);
+
+        if (password.length < 6) {
+           return setErrorMessage('Password must be at least 6 characters.');
+        }
+        if (!/[A-Z]/.test(password)) {
+          return   setErrorMessage('Password must be 1 Upper case');
+          
+        }
+        if (!/[a-z]/.test(password)) {
+           return  setErrorMessage('Password must be 1 lower case');
+            
+        }
+        if (!/\d/.test(password)) {
+          return   setErrorMessage('Password must be 1 number case');          
+        }
+
         CreateUSer(email, password)
             .then(result => {
                 toast.success('🦄 User login successfully !', {
@@ -24,8 +43,15 @@ const Register = () => {
                     progress: undefined,
                     theme: "light",
                 });
+                const users = result.user
                 console.log(result.user);
-
+                UpdateUserProfile({ displayName: name, photoURL: photo }).then(() => {
+                    setUser({ ...users, displayName: name, photoURL: photo });
+                    navigate('/')
+                }).catch((error) => {
+                    console.log(error);
+                    setUser(users)
+                });
             })
             .catch(error => {
                 console.log(error);
@@ -57,31 +83,10 @@ const Register = () => {
                     <input name='email' type="email" className="input" placeholder="email" required />
                     {/* password */}
                     <label className="label">Password</label>
-                    <label className="input validator">
-                        <svg className="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                            <g
-                                strokeLinejoin="round"
-                                strokeLinecap="round"
-                                strokeWidth="2.5"
-                                fill="none"
-                                stroke="currentColor"
-                            >
-                                <path
-                                    d="M2.586 17.414A2 2 0 0 0 2 18.828V21a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h1a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h.172a2 2 0 0 0 1.414-.586l.814-.814a6.5 6.5 0 1 0-4-4z"
-                                ></path>
-                                <circle cx="16.5" cy="7.5" r=".5" fill="currentColor"></circle>
-                            </g>
-                        </svg>
-                        <input
-                            name='password'
-                            type="password"
-                            required
-                            placeholder="Password"
-                            minLength="8"
-                            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-                            title="Must be more than 8 characters, including number, lowercase letter, uppercase letter"
-                        />
-                    </label>
+                    <input name='password' type="password" className="input" placeholder="password" required />
+                    {
+                      errorMessage && <p className='text-red-600 '>{errorMessage}</p>
+                    }
                     <p className="validator-hint hidden">
                         Must be more than 8 characters, including
                         <br />At least one number <br />At least one lowercase letter <br />At least one uppercase letter
