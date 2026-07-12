@@ -5,6 +5,7 @@ import { useLoaderData, useParams } from 'react-router';
 import Reviews from './Reviews';
 import { GrInstallOption } from 'react-icons/gr';
 import { RiUninstallLine } from 'react-icons/ri';
+import { Helmet } from 'react-helmet-async';
 // import DetailsCard from './DetailsCard';
 
 const AppDetails = () => {
@@ -17,6 +18,9 @@ const AppDetails = () => {
 
     return (
         <div className="card bg-gray-100 shadow-sm my-4">
+            <Helmet>
+                <title>AppStore || {name}</title>
+            </Helmet>
             <figure className="px-10 pt-6">
                 <img
                     src={banner}
