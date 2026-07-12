@@ -6,14 +6,14 @@ const Login = () => {
   const { googleSignIn, loginUser } = use(AuthContext);
   const location = useLocation();
    const navigate = useNavigate();
-  console.log(location);
+  // console.log(location);
  
 
   const handleLogin = e => {
     e.preventDefault();
     const email = e.target.email.value;
     const password = e.target.password.value;
-    console.log(email, password);
+    // console.log(email, password);
     loginUser(email, password)
       .then(result => {
         const loginUserData = result.user

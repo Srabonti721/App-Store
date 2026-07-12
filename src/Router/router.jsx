@@ -9,6 +9,7 @@ import Register from "../Authentication/forms/Register";
 import Login from "../Authentication/forms/Login";
 import PrivateRoute from "../Context/PrivateRoute";
 import Loading from "../Context/Loading";
+import MyProfile from "../Components/MyProfile/MyProfile";
 
 const router = createBrowserRouter([
   {
@@ -25,6 +26,12 @@ const router = createBrowserRouter([
         Component: Apps,
         loader: () => fetch("AppStore.json"),
         hydrateFallbackElement:<Loading></Loading>
+      },
+      {
+         path:"/profile",
+         element:<PrivateRoute>
+          <MyProfile></MyProfile>
+         </PrivateRoute>
       },
         {
     path: '/appsDetails/:id',

@@ -5,7 +5,6 @@ const appStorePromise = fetch('categories.json').then(res => res.json());
 
 const Categories = () => {
     const appStoreCategories = use(appStorePromise)
-    // console.log(appStorePromise);
     return (
         <div className='my-8 py-8 bg-linear-to-r from-indigo-100 via-purple-100 to-pink-100'>
             <div className='text-center'>

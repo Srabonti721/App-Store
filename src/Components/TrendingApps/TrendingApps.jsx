@@ -5,7 +5,6 @@ const TrendingApps = ({ apps }) => {
     const trendingApps = apps  
 .sort((a, b) => b.rating - a.rating)
   .slice(0, 4);
-//   console.log(trendingApps);
   
     return (
         <div>

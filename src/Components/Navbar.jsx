@@ -29,7 +29,7 @@ const Navbar = () => {
 
   const links = <>
     <NavLink className='mr-10' to='/'>Home</NavLink>
-    <NavLink className='mr-10' to={'/apps'}>Apps</NavLink>
+    <NavLink className='mr-10' to='/apps'>Apps</NavLink>
     <NavLink className='mr-10' to='/profile'>MY Profile</NavLink>
   </>
   return (
@@ -52,11 +52,9 @@ const Navbar = () => {
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
-
           {links}
         </ul>
       </div>
-
       <div className="navbar-end ">
         <div className="tooltip tooltip-bottom" data-tip={user?.email}>
           <img
