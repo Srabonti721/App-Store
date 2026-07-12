@@ -5,7 +5,7 @@ import { Link } from 'react-router';
 
 const ProductivityCard = ({Productivity}) => {
       const {id, thumbnail, name, rating, downloads, category } = Productivity;
-    console.log(id);
+    // console.log(id);
     
     return (
         <>

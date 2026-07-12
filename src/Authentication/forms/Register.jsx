@@ -1,9 +1,10 @@
 import React, { use } from 'react';
 import { Link } from 'react-router';
 import { AuthContext } from '../../Context/AuthProvider';
+import { toast } from 'react-toastify';
 
 const Register = () => {
-    const {googleSignIn} = use(AuthContext);
+    const { googleSignIn, CreateUSer,  } = use(AuthContext);
     const handleRegister = e => {
         e.preventDefault();
         const name = e.target.name.value;
@@ -11,19 +12,37 @@ const Register = () => {
         const email = e.target.email.value;
         const password = e.target.password.value;
         console.log(name, photo, email, password);
+        CreateUSer(email, password)
+            .then(result => {
+                toast.success('🦄 User login successfully !', {
+                    position: "top-right",
+                    autoClose: 3000,
+                    hideProgressBar: false,
+                    closeOnClick: false,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light",
+                });
+                console.log(result.user);
 
+            })
+            .catch(error => {
+                console.log(error);
+
+            })
     }
 
     // google Sign in
-    const handleGoogleSign = () =>{
+    const handleGoogleSign = () => {
         googleSignIn()
-        .then(result=>{
-            console.log(result); 
-        })
-        .error(error=>{
-            console.log(error);
-            
-        })
+            .then(result => {
+                console.log(result);
+            })
+            .error(error => {
+                console.log(error);
+
+            })
     }
     return (
         <div className="my-10 p-4 card bg-base-100 w-full max-w-lg mx-auto shrink-0 shadow-2xl x">
@@ -35,7 +54,7 @@ const Register = () => {
                     <label className="label">Your Photo URL</label>
                     <input name='photo' type="text" className="input" placeholder="Photo URL" required />
                     <label className="label">Email</label>
-                    <input name='email' type="email" className="input" placeholder="" required />
+                    <input name='email' type="email" className="input" placeholder="email" required />
                     {/* password */}
                     <label className="label">Password</label>
                     <label className="input validator">
