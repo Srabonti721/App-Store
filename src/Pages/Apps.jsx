@@ -5,6 +5,7 @@ import Slider from '../Components/Slider/Slider';
 import Productivity from '../Components/productivity/Productivity';
 import Health from '../Components/Health/Health';
 import Education from '../Components/Education/Education';
+import AllCategory from './AppDetails/AllCategory';
 
 const Apps = () => {
     const apps = useLoaderData();
@@ -23,6 +24,7 @@ const Apps = () => {
                 <Health apps={apps}></Health>
                 <Education apps={apps}></Education>
             </section>
+            <AllCategory apps={apps}></AllCategory>
         </div>
     );
 };

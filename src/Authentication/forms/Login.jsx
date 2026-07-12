@@ -36,7 +36,7 @@ const Login = () => {
           <label className="label">Password</label>
           <input name='password' type="password" className="input" placeholder="Password" required />
           <div><a className="link link-hover">Forgot password?</a></div>
-          <button className="btn btn-neutral mt-4">Login</button>
+          <Link className="btn btn-neutral mt-4">Login</Link>
         </form>
         <p className='text-sm'>Don't have an account? <Link className='text-blue-800 underline' to='/authLayout/register'> Register</Link></p>
         ------------------------ or -----------------------
