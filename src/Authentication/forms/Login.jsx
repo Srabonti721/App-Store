@@ -1,6 +1,7 @@
 import React, { use } from 'react';
 import { AuthContext } from '../../Context/AuthProvider';
 import { Link, useLocation, useNavigate } from 'react-router';
+import { toast } from 'react-toastify';
 
 const Login = () => {
   const { googleSignIn, loginUser } = use(AuthContext);
@@ -18,6 +19,16 @@ const Login = () => {
       .then(result => {
         const loginUserData = result.user
         console.log(loginUserData);
+                      toast.success('🦄 User login successfully !', {
+                            position: "top-right",
+                            autoClose: 3000,
+                            hideProgressBar: false,
+                            closeOnClick: false,
+                            pauseOnHover: true,
+                            draggable: true,
+                            progress: undefined,
+                            theme: "light",
+                        });
         navigate(`${location.state ? location.state : "/"}`)
       })
       .caught(error => {

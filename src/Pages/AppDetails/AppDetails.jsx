@@ -6,7 +6,6 @@ import Reviews from './Reviews';
 import { GrInstallOption } from 'react-icons/gr';
 import { RiUninstallLine } from 'react-icons/ri';
 import { Helmet } from 'react-helmet-async';
-// import DetailsCard from './DetailsCard';
 
 const AppDetails = () => {
     const [install, setInstall] = useState(false)
